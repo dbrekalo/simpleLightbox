@@ -1,0 +1,172 @@
+@import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
+
+.slbOverlay, .slbWrapOuter, .slbWrap {
+
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+
+}
+
+.slbOverlay {
+
+    overflow: hidden; z-index: 2000; background-color: #000; opacity: 0.7; filter: alpha(opacity=70);
+    @include animation(slbOverlay 0.5s);
+
+}
+
+.slbWrapOuter {
+
+    overflow-x: hidden; overflow-y: auto; z-index: 2010;
+
+}
+
+.slbWrap {
+
+    position: absolute; text-align: center;
+
+    &:before {
+
+        content: ""; display: inline-block; height: 100%; vertical-align: middle;
+
+    }
+
+}
+
+.slbContentOuter {
+
+    position: relative; display: inline-block; vertical-align: middle; margin: 0px auto; padding: 0 1em; box-sizing: border-box; z-index: 2020; text-align: left;
+    max-width: 100%;
+
+    .slbContentEl & {
+
+        padding: 5em 1em;
+
+    }
+
+}
+
+.slbContent {
+
+    position: relative;
+
+    .slbContentEl & {
+
+        @include animation(slbEnter 0.3s); background-color: #fff; box-shadow: 0 0.2em 1em rgba(#000, 0.4);
+
+    }
+
+}
+
+.slbImageWrap {
+
+    @include animation(slbEnter 0.3s);
+    position: relative;
+
+    &:after {
+
+        content: ""; position: absolute; left: 0; right: 0; top: 3em; bottom: 3em; display: block; z-index: -1;
+        box-shadow: 0 0.2em 1em rgba(#000, 0.6);
+
+    }
+
+}
+
+.slbImage {
+
+    width: auto; max-width: 100%; height: auto; display: block; line-height: 0; box-sizing: border-box; padding: 3em 0; margin: 0 auto;
+
+}
+
+.slbCaption {
+
+    font-size: 1.4em; position: absolute; left: 0; right: 0; top: 100%; margin-top: em(-15,14); line-height: 1.4;
+    color: #fff; text-align: center;
+
+}
+
+.slbCloseBtn, .slbArrow {
+
+    margin:0; padding: 0; border: 0; cursor: pointer; background: none;
+    &::-moz-focus-inner { padding: 0; border: 0; }
+
+    &:hover { opacity: 0.5; }
+    &:active { opacity: 0.8; }
+
+}
+
+.slbCloseBtn {
+
+    $size: 50; $iconSize: 30;
+
+    font-size: em($iconSize,10); width: em($size,$iconSize); height: em($size,$iconSize); line-height: em($size,$iconSize); position: fixed; right: 0; top: 0;
+    color: #fff; color: rgba(#fff, 0.7); text-align: center;
+
+    .slbContentEl & {
+
+        position: absolute; right: em(-10,$iconSize); top: em(0*$size, $iconSize);
+
+    }
+
+}
+
+.slbLoading {
+
+    font-size: 1.4em; color: #fff; color: rgba(#fff,0.9);
+
+}
+
+.slbArrows {
+
+    position: fixed; top: 50%; left: 0; right: 0;
+
+}
+
+.slbArrow {
+
+    $size: 50; $iconSize: 8;
+
+    position: absolute; top: 50%; margin-top: em(-1*$size,10); width: em($size,10); height: em($size*2,10);
+    opacity: 0.7; text-indent: -999em; overflow: hidden;
+
+    &:before {
+
+        content: ""; position: absolute; top: 50%; left: 50%; margin: em(-$iconSize,10) 0 0 em(-$iconSize,10); border: em($iconSize,10) solid transparent;
+
+    }
+
+    &.next {
+
+        right: 0; &:before { border-left-color: #fff; }
+
+    }
+
+    &.prev {
+
+        left: 0; &:before { border-right-color: #fff;}
+
+    }
+
+}
+
+.slbIframeCont {
+
+    width: 80em; height: 0; overflow: hidden; padding-top: 56.25%;
+
+}
+
+.slbIframe {
+
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: 0 0.2em 1em rgba(#000, 0.6); background: #000;
+
+}
+
+@include keyframes(slbOverlay) {
+    from { opacity: 0; }
+    to { opacity: 0.7; }
+}
+
+@include keyframes(slbEnter) {
+    from { opacity: 0.5; @include transform(translate3d(0, -1em, 0)); }
+    to { opacity: 1; @include transform(translate3d(0, 0, 0)); }
+}
+

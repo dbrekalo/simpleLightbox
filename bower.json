@@ -1,0 +1,30 @@
+{
+  "name": "simple-lightbox",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dbrekalo/simpleLightbox",
+  "authors": [
+    "Damir Brekalo <damir.brekalo@trikoder.net>"
+  ],
+  "description": "Lightweight plugin for lightbox images and galleries based on jquery api",
+  "main": "dist/simpleLightbox.min.js",
+  "keywords": [
+    "popup",
+    "lightbox",
+    "modal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bourbon": "~4.2.3"
+  },
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "simplequery": "~1.0.1"
+  }
+}
