@@ -82,7 +82,7 @@ lightbox.setContent('<div>My content</div>');
 ##Plugin options
 ```javascript
 
-SimpleLightbox.defaults = {
+$.simpleLightbox.defaults = {
 
 	// add custom classes to lighbox elements
     elementClass: '',
