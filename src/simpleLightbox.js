@@ -40,7 +40,7 @@
         startAt: 0,
         loadingTimeout: 100,
 
-        appendTarget: $('body'),
+        appendTarget: null,
 
         beforeSetContent: null,
         beforeClose: null,
@@ -52,10 +52,10 @@
 
     $.extend(SimpleLightbox.prototype, {
 
-        items: [],
-        captions: [],
-
         init: function() {
+
+            this.items = [];
+            this.captions = [];
 
             var self = this;
 
@@ -221,7 +221,7 @@
 
             if (!this.modalInDom) {
 
-                this.$el.appendTo(this.options.appendTarget);
+                this.$el.appendTo(this.options.appendTarget || $('body'));
                 $html.addClass(this.options.htmlClass);
                 this.setupLightboxEvents();
 
