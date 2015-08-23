@@ -109,7 +109,7 @@ $.simpleLightbox.defaults = {
     startAt: 0, // start gallery at custom index
     loadingTimeout: 100, // time after loading element will appear
 
-    appendTarget: $('body'), // append elsewhere if needed
+    appendTarget: 'body', // append elsewhere if needed
 
     beforeSetContent: null, // convenient hooks for extending library behavoiur
     beforeClose: null,

@@ -40,7 +40,7 @@
         startAt: 0,
         loadingTimeout: 100,
 
-        appendTarget: null,
+        appendTarget: 'body',
 
         beforeSetContent: null,
         beforeClose: null,
@@ -221,7 +221,7 @@
 
             if (!this.modalInDom) {
 
-                this.$el.appendTo(this.options.appendTarget || $('body'));
+                this.$el.appendTo($(this.options.appendTarget));
                 $html.addClass(this.options.htmlClass);
                 this.setupLightboxEvents();
 
