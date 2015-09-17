@@ -132,6 +132,9 @@
   text-align: center;
 }
 .slbContentEl .slbCloseBtn {
+  -webkit-animation: slbEnter 0.3s;
+  -moz-animation: slbEnter 0.3s;
+  animation: slbEnter 0.3s;
   position: absolute;
   right: -0.33333em;
   top: 0em;

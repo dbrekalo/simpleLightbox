@@ -102,6 +102,8 @@
 
     .slbContentEl & {
 
+        @include animation(slbEnter 0.3s);
+
         position: absolute; right: em(-10,$iconSize); top: em(0*$size, $iconSize);
 
     }
