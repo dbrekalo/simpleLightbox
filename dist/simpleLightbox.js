@@ -17,6 +17,7 @@
 
     SimpleLightbox.defaults = {
 
+        // add custom classes to lightbox elements
         elementClass: '',
         htmlClass: 'slbActive',
         closeBtnClass: '',
@@ -24,29 +25,31 @@
         prevBtnClass: '',
         loadingClass: '',
 
+        // customize / localize controls captions
         closeBtnCaption: 'Close',
         nextBtnCaption: 'Next',
         prevBtnCaption: 'Previous',
         loadingCaption: 'Loading...',
 
-        bindToItems: true,
+        bindToItems: true, // set click event handler to trigger lightbox on provided $items
         closeOnOverlayClick: true,
+        closeOnEscapeKey: true,
         nextOnImageClick: true,
         showCaptions: true,
 
-        captionAttribute: 'title',
-        urlAttribute: 'href',
+        captionAttribute: 'title', // choose data source for library to glean image caption from
+        urlAttribute: 'href', // where to expect large image
 
-        startAt: 0,
-        loadingTimeout: 100,
+        startAt: 0, // start gallery at custom index
+        loadingTimeout: 100, // time after loading element will appear
 
-        appendTarget: 'body',
+        appendTarget: 'body', // append elsewhere if needed
 
-        beforeSetContent: null,
+        beforeSetContent: null, // convenient hooks for extending library behavoiur
         beforeClose: null,
         beforeDestroy: null,
 
-        videoRegex: new RegExp(/youtube.com|vimeo.com/)
+        videoRegex: new RegExp(/youtube.com|vimeo.com/) // regex which tests load url for iframe content
 
     };
 
@@ -281,7 +284,7 @@
 
                 $document.on('keyup' + this.ens, function(e) {
 
-                    if (e.keyCode === 27) { self.close(); }
+                    self.options.closeOnEscapeKey && e.keyCode === 27 && self.close();
 
                     if (self.items.length > 1) {
                         (e.keyCode === 39 || e.keyCode === 68) && self.next();

@@ -84,7 +84,7 @@ lightbox.setContent('<div>My content</div>');
 
 $.simpleLightbox.defaults = {
 
-	// add custom classes to lighbox elements
+	// add custom classes to lightbox elements
     elementClass: '',
     htmlClass: 'slbActive',
     closeBtnClass: '',
@@ -92,7 +92,7 @@ $.simpleLightbox.defaults = {
     prevBtnClass: '',
     loadingClass: '',
 
-	// customize / localize controls captions
+    // customize / localize controls captions
     closeBtnCaption: 'Close',
     nextBtnCaption: 'Next',
     prevBtnCaption: 'Previous',
@@ -100,6 +100,7 @@ $.simpleLightbox.defaults = {
 
     bindToItems: true, // set click event handler to trigger lightbox on provided $items
     closeOnOverlayClick: true,
+    closeOnEscapeKey: true,
     nextOnImageClick: true,
     showCaptions: true,
 
