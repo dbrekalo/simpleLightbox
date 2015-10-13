@@ -309,7 +309,7 @@
 
             if (this.modalInDom) {
 
-                this.beforeClose && this.beforeClose(this);
+                this.options.beforeClose && this.options.beforeClose(this);
 
                 this.$el && this.$el.off(this.ens);
                 $document.off(this.ens);
