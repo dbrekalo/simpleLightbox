@@ -326,7 +326,7 @@
         destroy: function() {
 
             this.close();
-            this.beforeDestroy && this.beforeDestroy(this);
+            this.options.beforeDestroy && this.options.beforeDestroy(this);
             this.$items && this.$items.off(this.ens);
             this.$el && this.$el.remove();
 
