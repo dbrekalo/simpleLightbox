@@ -138,7 +138,9 @@
                 this.loadingTimeout = setTimeout(function() {
 
                     self.$el.addClass(self.options.elementLoadingClass);
-                    self.setContent('<p class="slbLoadingText ' + self.options.loadingTextClass + '">' + self.options.loadingCaption + '</p>').show();
+
+                    self.$content.html('<p class="slbLoadingText ' + self.options.loadingTextClass + '">' + self.options.loadingCaption + '</p>');
+                    self.show();
 
                 }, this.options.loadingTimeout);
 
