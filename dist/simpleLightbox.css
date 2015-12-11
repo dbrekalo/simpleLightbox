@@ -27,6 +27,7 @@
   position: absolute;
   text-align: center;
 }
+
 .slbWrap:before {
   content: "";
   display: inline-block;
@@ -45,6 +46,7 @@
   text-align: left;
   max-width: 100%;
 }
+
 .slbContentEl .slbContentOuter {
   padding: 5em 1em;
 }
@@ -52,6 +54,7 @@
 .slbContent {
   position: relative;
 }
+
 .slbContentEl .slbContent {
   -webkit-animation: slbEnter 0.3s;
   -moz-animation: slbEnter 0.3s;
@@ -66,6 +69,7 @@
   animation: slbEnter 0.3s;
   position: relative;
 }
+
 .slbImageWrap:after {
   content: "";
   position: absolute;
@@ -108,39 +112,41 @@
   cursor: pointer;
   background: none;
 }
+
 .slbCloseBtn::-moz-focus-inner, .slbArrow::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 .slbCloseBtn:hover, .slbArrow:hover {
   opacity: 0.5;
 }
+
 .slbCloseBtn:active, .slbArrow:active {
   opacity: 0.8;
 }
 
 .slbCloseBtn {
+  -webkit-animation: slbEnter 0.3s;
+  -moz-animation: slbEnter 0.3s;
+  animation: slbEnter 0.3s;
   font-size: 3em;
   width: 1.66667em;
   height: 1.66667em;
   line-height: 1.66667em;
-  position: fixed;
-  right: 0;
+  position: absolute;
+  right: -0.33333em;
   top: 0;
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
 }
-.slbContentEl .slbCloseBtn {
-  -webkit-animation: slbEnter 0.3s;
-  -moz-animation: slbEnter 0.3s;
-  animation: slbEnter 0.3s;
-  position: absolute;
-  right: -0.33333em;
-  top: 0em;
+
+.slbLoading .slbCloseBtn {
+  display: none;
 }
 
-.slbLoading {
+.slbLoadingText {
   font-size: 1.4em;
   color: #fff;
   color: rgba(255, 255, 255, 0.9);
@@ -163,6 +169,7 @@
   text-indent: -999em;
   overflow: hidden;
 }
+
 .slbArrow:before {
   content: "";
   position: absolute;
@@ -171,15 +178,19 @@
   margin: -0.8em 0 0 -0.8em;
   border: 0.8em solid transparent;
 }
+
 .slbArrow.next {
   right: 0;
 }
+
 .slbArrow.next:before {
   border-left-color: #fff;
 }
+
 .slbArrow.prev {
   left: 0;
 }
+
 .slbArrow.prev:before {
   border-right-color: #fff;
 }
@@ -209,6 +220,7 @@
     opacity: 0.7;
   }
 }
+
 @-moz-keyframes slbOverlay {
   from {
     opacity: 0;
@@ -217,6 +229,7 @@
     opacity: 0.7;
   }
 }
+
 @keyframes slbOverlay {
   from {
     opacity: 0;
@@ -225,6 +238,7 @@
     opacity: 0.7;
   }
 }
+
 @-webkit-keyframes slbEnter {
   from {
     opacity: 0.5;
@@ -235,6 +249,7 @@
     -webkit-transform: translate3d(0, 0, 0);
   }
 }
+
 @-moz-keyframes slbEnter {
   from {
     opacity: 0.5;
@@ -245,6 +260,7 @@
     -moz-transform: translate3d(0, 0, 0);
   }
 }
+
 @keyframes slbEnter {
   from {
     opacity: 0.5;

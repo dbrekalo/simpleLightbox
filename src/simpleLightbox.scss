@@ -97,20 +97,21 @@
 
     $size: 50; $iconSize: 30;
 
-    font-size: em($iconSize,10); width: em($size,$iconSize); height: em($size,$iconSize); line-height: em($size,$iconSize); position: fixed; right: 0; top: 0;
+    @include animation(slbEnter 0.3s);
+
+    font-size: em($iconSize,10); width: em($size,$iconSize); height: em($size,$iconSize); line-height: em($size,$iconSize);
+    position: absolute; right: em(-10,$iconSize); top: 0;
     color: #fff; color: rgba(#fff, 0.7); text-align: center;
 
-    .slbContentEl & {
+    .slbLoading & {
 
-        @include animation(slbEnter 0.3s);
-
-        position: absolute; right: em(-10,$iconSize); top: em(0*$size, $iconSize);
+        display: none;
 
     }
 
 }
 
-.slbLoading {
+.slbLoadingText {
 
     font-size: 1.4em; color: #fff; color: rgba(#fff,0.9);
 

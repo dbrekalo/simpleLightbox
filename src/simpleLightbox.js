@@ -19,11 +19,12 @@
 
         // add custom classes to lightbox elements
         elementClass: '',
+        elementLoadingClass: 'slbLoading',
         htmlClass: 'slbActive',
         closeBtnClass: '',
         nextBtnClass: '',
         prevBtnClass: '',
-        loadingClass: '',
+        loadingTextClass: '',
 
         // customize / localize controls captions
         closeBtnCaption: 'Close',
@@ -128,16 +129,34 @@
 
         },
 
+        loading: function(on) {
+
+            var self = this;
+
+            if (on) {
+
+                this.loadingTimeout = setTimeout(function() {
+
+                    self.$el.addClass(self.options.elementLoadingClass);
+                    self.setContent('<p class="slbLoadingText ' + self.options.loadingTextClass + '">' + self.options.loadingCaption + '</p>').show();
+
+                }, this.options.loadingTimeout);
+
+            } else {
+
+                this.$el.removeClass(this.options.elementLoadingClass);
+                clearTimeout(this.loadingTimeout);
+
+            }
+
+        },
+
         prepareItem: function(position, callback) {
 
             var self = this,
                 url = this.items[position];
 
-            this.loadingTimeout = setTimeout(function() {
-
-                self.setContent('<p class="slbLoading ' + self.options.loadingClass + '">' + self.options.loadingCaption + '</p>').show();
-
-            }, this.options.loadingTimeout);
+            this.loading(true);
 
             if (this.options.videoRegex.test(url)) {
 
@@ -216,6 +235,8 @@
 
             }
 
+            this.$content.empty();
+
             return this;
 
         },
@@ -240,7 +261,7 @@
 
             var $content = $(content);
 
-            clearTimeout(this.loadingTimeout);
+            this.loading(false);
 
             this.setupLightboxHtml();
             this.options.beforeSetContent && this.options.beforeSetContent($content, this);

@@ -37,23 +37,24 @@ module.exports = function(grunt) {
 		},
 
 		sass: {
-			options: {
-				sourcemap: 'none'
-			},
 			min: {
-				options: {
-					style: 'compressed'
-				},
 				files: {
 					'dist/simpleLightbox.min.css': 'src/simpleLightbox.scss'
+				},
+				options: {
+				    outputStyle: 'compressed',
+				    sourceMap: false,
+				    precision: 5
 				}
 			},
 			expanded: {
-				options: {
-					style: 'expanded'
-				},
 				files: {
 					'dist/simpleLightbox.css': 'src/simpleLightbox.scss'
+				},
+				options: {
+				    outputStyle: 'expanded',
+				    sourceMap: false,
+				    precision: 5
 				}
 			}
 		},
@@ -63,6 +64,14 @@ module.exports = function(grunt) {
 				expand: true,
 				files: ['src/**/*.js'],
 				tasks: ['jshint', 'copy','uglify'],
+				options: {
+					spawn: false
+				}
+			},
+			cssFiles: {
+				expand: true,
+				files: ['src/**/*.scss'],
+				tasks: ['sass'],
 				options: {
 					spawn: false
 				}

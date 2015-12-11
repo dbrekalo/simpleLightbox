@@ -84,13 +84,14 @@ lightbox.setContent('<div>My content</div>');
 
 $.simpleLightbox.defaults = {
 
-	// add custom classes to lightbox elements
+    // add custom classes to lightbox elements
     elementClass: '',
+    elementLoadingClass: 'slbLoading',
     htmlClass: 'slbActive',
     closeBtnClass: '',
     nextBtnClass: '',
     prevBtnClass: '',
-    loadingClass: '',
+    loadingTextClass: '',
 
     // customize / localize controls captions
     closeBtnCaption: 'Close',
