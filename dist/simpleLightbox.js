@@ -146,7 +146,7 @@
 
             } else {
 
-                this.$el.removeClass(this.options.elementLoadingClass);
+                this.$el && this.$el.removeClass(this.options.elementLoadingClass);
                 clearTimeout(this.loadingTimeout);
 
             }

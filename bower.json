@@ -1,9 +1,9 @@
 {
   "name": "simple-lightbox",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/dbrekalo/simpleLightbox",
   "authors": [
-    "Damir Brekalo <damir.brekalo@trikoder.net>"
+    "Damir Brekalo <dbrekalo@gmail.com>"
   ],
   "description": "Lightweight plugin for lightbox images and galleries based on jquery api",
   "main": "dist/simpleLightbox.min.js",
