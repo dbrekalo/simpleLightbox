@@ -1,6 +1,6 @@
 {
   "name": "simple-lightbox",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/dbrekalo/simpleLightbox"
@@ -12,6 +12,7 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^1",
+    "grunt-jscs": "^1.5.0",
     "load-grunt-tasks": "^0.6.0"
   }
 }

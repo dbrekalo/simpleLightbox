@@ -1,7 +1,5 @@
 ;(function($) {
 
-    'use strict';
-
     var instanceNum = 0,
         $html = $('html'),
         $document = $(document),
@@ -9,9 +7,7 @@
 
     function SimpleLightbox(options) {
 
-        this.options = $.extend({}, SimpleLightbox.defaults, options);
-        this.ens = '.slb' + (++instanceNum);
-        this.init();
+        this.init.apply(this, arguments);
 
     }
 
@@ -56,8 +52,10 @@
 
     $.extend(SimpleLightbox.prototype, {
 
-        init: function() {
+        init: function(options) {
 
+            this.options = $.extend({}, SimpleLightbox.defaults, options);
+            this.ens = '.slb' + (++instanceNum);
             this.items = [];
             this.captions = [];
 
@@ -379,6 +377,6 @@
 
     };
 
-    $.simpleLightbox = SimpleLightbox;
+    $.simpleLightbox = $.SimpleLightbox = SimpleLightbox;
 
 })(window.jQuery || window.Zepto || window.simpleQuery);
