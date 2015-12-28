@@ -60,9 +60,9 @@
         <h2 class="attireTitleType2">Examples</h2>
 
         <div class="imageGallery1">
-    <a href="demo/images/4big.jpg"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
-    <a href="demo/images/5big.jpg"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
-    <a href="demo/images/6big.jpg"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
+    <a href="demo/images/4big.jpg" title="Caption for gallery item 1"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
+    <a href="demo/images/5big.jpg" title="Caption for gallery item 2"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
+    <a href="demo/images/6big.jpg" title="Caption for gallery item 3"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
 </div>
 
 <h3 class="attireTitleType3">Thumbs gallery</h3>
@@ -77,13 +77,13 @@
 
     .imageGallery1 {
 
-        overflow: hidden; margin: 30px -10px; padding: 5px;
+        overflow: hidden; margin: 30px -10px; padding: 8px;
         background-color: #fff;
 
     }
     .imageGallery1 > a {
 
-        float: left; padding: 5px; width: 33.3333%; box-sizing: border-box;
+        float: left; padding: 2px; width: 33.3333%; box-sizing: border-box;
 
     }
     .imageGallery1 > a > img {
@@ -100,9 +100,9 @@
 
 <pre class="attireCodeHighlight"><code class="language-markup">
     <script type="prism-html-markup"><div class="imageGallery1">
-        <a href="demo/images/4big.jpg"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
-        <a href="demo/images/5big.jpg"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
-        <a href="demo/images/6big.jpg"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
+        <a href="demo/images/4big.jpg" title="Caption for gallery item 1"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
+        <a href="demo/images/5big.jpg" title="Caption for gallery item 2"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
+        <a href="demo/images/6big.jpg" title="Caption for gallery item 3"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
     </div>
     </script>
 </code></pre>
@@ -184,24 +184,20 @@
         <h3 class="attireTitleType3">Displaying video</h3>
 
 <p class="attireTextType2">
-    Sometimes you need to <a class="lightBoxVideo" href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true">show a video</a> in light-box
+    Sometimes you need to <a class="lightBoxVideoLink" href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true">show a video</a> in light-box
     (Video can be placed somewhere in gallery as well).
 </p>
 
 <script>
-    $('.lightBoxVideo').simpleLightbox();
+    $('.lightBoxVideoLink').simpleLightbox();
 </script>
 
 <pre class="attireCodeHighlight"><code class="language-markup">
-    <script type="prism-html-markup"><p class="attireTextType2">
-        Sometimes you need to <a class="lightBoxVideo" href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true">show a video</a> in light-box
-        (Video can be placed somewhere in gallery as well).
-    </p>
-    </script>
+    <script type="prism-html-markup">Sometimes you need to <a class="lightBoxVideoLink" href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true">show a video</a> in light-box (Video can be placed somewhere in gallery as well).</script>
 </code></pre>
 
 <pre class="attireCodeHighlight"><code class="language-javascript">
-    $('.lightBoxVideo').simpleLightbox();
+    $('.lightBoxVideoLink').simpleLightbox();
 </code></pre>
 
 

@@ -78,8 +78,9 @@
 
 .slbCaption {
 
-    font-size: 1.4em; position: absolute; left: 0; right: 0; top: 100%; margin-top: em(-15,14); line-height: 1.4;
-    color: #fff; text-align: center;
+    @include ellipsis;
+    font-size: 1.4em; position: absolute; left: 0; right: 0; bottom: 0; padding: em(10,14) 0;
+    color: #fff; color: rgba(#fff, 0.7); text-align: center;
 
 }
 
@@ -152,7 +153,7 @@
 
 .slbIframeCont {
 
-    width: 80em; height: 0; overflow: hidden; padding-top: 56.25%;
+    width: 80em; height: 0; overflow: hidden; padding-top: 56.25%; margin: 5em 0;
 
 }
 

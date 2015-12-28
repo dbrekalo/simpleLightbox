@@ -94,14 +94,20 @@
 }
 
 .slbCaption {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
   font-size: 1.4em;
   position: absolute;
   left: 0;
   right: 0;
-  top: 100%;
-  margin-top: -1.07143em;
-  line-height: 1.4;
+  bottom: 0;
+  padding: 0.71429em 0;
   color: #fff;
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
 }
 
@@ -200,6 +206,7 @@
   height: 0;
   overflow: hidden;
   padding-top: 56.25%;
+  margin: 5em 0;
 }
 
 .slbIframe {
