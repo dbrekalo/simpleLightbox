@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        {{ include('snippets/pageMeta.html', {
+            "title": "SimpleLightbox",
+            "description": "SimpleLightbox is lightweight and responsive lightbox library based on jQuery."
+        }) }}
+
+        {{ include('snippets/attireAssets.html') }}
+
+        <link rel="stylesheet" href="dist/simpleLightbox.min.css">
+        <script src="dist/simpleLightbox.min.js"></script>
+
+    </head>
+<body>
+
+    {{ include('sections/about.html') }}
+    {{ include('sections/examples.html') }}
+    {{ include('sections/apiAndOptions.html') }}
+    {{ include('sections/installation.html') }}
+
+    {{ include('snippets/githubRibbon.html') }}
+    {{ include('snippets/attireFooter.html') }}
+
+</body>
+
+</html>

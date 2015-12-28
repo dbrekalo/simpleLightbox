@@ -169,7 +169,7 @@
 }
 
 @include keyframes(slbEnter) {
-    from { opacity: 0.5; @include transform(translate3d(0, -1em, 0)); }
+    from { opacity: 0.8; @include transform(translate3d(0, -1em, 0)); }
     to { opacity: 1; @include transform(translate3d(0, 0, 0)); }
 }
 

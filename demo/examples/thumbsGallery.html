@@ -1,0 +1,51 @@
+<div class="imageGallery1">
+    <a href="demo/images/4big.jpg"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
+    <a href="demo/images/5big.jpg"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
+    <a href="demo/images/6big.jpg"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
+</div>
+
+<h3 class="attireTitleType3">Thumbs gallery</h3>
+
+<p class="attireTextType2">
+    Lets start with one of most common use cases - a gallery of thumbs where each thumb should be enlarged when clicked.
+    Once light-box is up you should be able to traverse images in collection either via arrows on screen or keyboard controls
+    (gamers might appreciate that "a" and "d" will work as arrow keys do).
+</p>
+
+<style>
+
+    .imageGallery1 {
+
+        overflow: hidden; margin: 30px -10px; padding: 5px;
+        background-color: #fff;
+
+    }
+    .imageGallery1 > a {
+
+        float: left; padding: 5px; width: 33.3333%; box-sizing: border-box;
+
+    }
+    .imageGallery1 > a > img {
+
+        display: block; width: 100%;
+
+    }
+
+</style>
+
+<script>
+    $('.imageGallery1 a').simpleLightbox();
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-markup">
+    <script type="prism-html-markup"><div class="imageGallery1">
+        <a href="demo/images/4big.jpg"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
+        <a href="demo/images/5big.jpg"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
+        <a href="demo/images/6big.jpg"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
+    </div>
+    </script>
+</code></pre>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $('.imageGallery1 a').simpleLightbox();
+</code></pre>

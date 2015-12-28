@@ -1,0 +1,39 @@
+<h3 class="attireTitleType3">Custom content</h3>
+
+<p class="attireTextType2">
+    There are times when you need to show some other type of content in lightbox beside images.
+    SimpleLightbox can be used to display forms, teasers or any custom html content.
+    <a class="customContentLink" role="button">Clicking here</a> will display the text above in lightbox form.
+</p>
+
+<style>
+
+    .contentInPopup {
+        padding: 2em; max-width: 40em;
+    }
+
+</style>
+
+<script>
+
+    $('.customContentLink').on('click', function() {
+        $.SimpleLightbox.open({
+            content: '<div class="contentInPopup">' +
+                        '<h3 class="attireTitleType3">Custom content</h3>' +
+                        '<p class="attireTextType2">' +
+                            'There are times when you need to show some other type of content in lightbox beside images.' +
+                            'SimpleLightbox can be used to display forms, teasers or any custom html content.' +
+                        '</p>' +
+                     '</div>',
+            elementClass: 'slbContentEl'
+        });
+    });
+
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $.SimpleLightbox.open({
+        content: '&lt;div class="contentInPopup"&gt;&lt;h3 class="attireTitleType3"&gtCustom content&lt;/h3&gt...',
+        elementClass: 'slbContentEl'
+    });
+</code></pre>

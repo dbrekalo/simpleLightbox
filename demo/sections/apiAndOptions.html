@@ -1,0 +1,107 @@
+<section id="section-api-and-options" class="attireBlock">
+    <div class="inner">
+
+        <h2 class="attireTitleType2">Api and options</h2>
+
+        <p class="attireTextType2">
+            SimpleLightbox can be instantiated via plugin facade.
+            If there is a need to obtain lightbox object instance you can do so via jQuery data utility.
+            Alternatively you can can just use SimpleLightbox constructor.
+        </p>
+
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+
+            var $thumbs = $('.gallery a');
+
+            // Run, fire and forget
+            $thumbs.simpleLightbox();
+
+            // Run via plugin facade and get instance
+            var lightbox = $thumbs.simpleLightbox(options).data('simpleLightbox');
+
+            // run directly
+            var lightbox = new $.SimpleLightbox({
+                $items: $thumbs
+            });
+
+            // when images are in code
+            var lightbox = $.simpleLightbox.open({
+                items: ['img1-large.jpg', 'img2-large.jpg', 'img3-large.jpg']
+            });
+        </code></pre>
+
+        <p class="attireTextType2">
+            Once you have a reference to SimpleLightbox instance following methods are available:
+        </p>
+
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+            // Go to next image
+            lightbox.next();
+
+            // Go to previous image
+            lightbox.prev();
+
+            // Close lightbox
+            lightbox.close();
+
+            // Destroy lightbox (does close and removes all $items click handlers)
+            lightbox.destroy();
+
+            // Open lightbox
+            lightbox.show();
+
+            // Open lightbox at certain position
+            lightbox.showPosition(1);
+
+            // Set custom content
+            lightbox.setContent('<div>My content</div>');
+        </code></pre>
+
+        <p class="attireTextType2">
+            Plugin options / defaults are exposed in $.SimpleLightbox.defaults namespace so you can easily adjust them globally.
+            Full list of options is bellow.
+        </p>
+
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+            $.SimpleLightbox.defaults = {
+
+                // add custom classes to lightbox elements
+                elementClass: '',
+                elementLoadingClass: 'slbLoading',
+                htmlClass: 'slbActive',
+                closeBtnClass: '',
+                nextBtnClass: '',
+                prevBtnClass: '',
+                loadingTextClass: '',
+
+                // customize / localize controls captions
+                closeBtnCaption: 'Close',
+                nextBtnCaption: 'Next',
+                prevBtnCaption: 'Previous',
+                loadingCaption: 'Loading...',
+
+                bindToItems: true, // set click event handler to trigger lightbox on provided $items
+                closeOnOverlayClick: true,
+                closeOnEscapeKey: true,
+                nextOnImageClick: true,
+                showCaptions: true,
+
+                captionAttribute: 'title', // choose data source for library to glean image caption from
+                urlAttribute: 'href', // where to expect large image
+
+                startAt: 0, // start gallery at custom index
+                loadingTimeout: 100, // time after loading element will appear
+
+                appendTarget: 'body', // append elsewhere if needed
+
+                beforeSetContent: null, // convenient hooks for extending library behavoiur
+                beforeClose: null,
+                beforeDestroy: null,
+
+                videoRegex: new RegExp(/youtube.com|vimeo.com/) // regex which tests load url for iframe content
+
+            };
+        </code></pre>
+
+    </div>
+</section>

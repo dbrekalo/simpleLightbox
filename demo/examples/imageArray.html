@@ -1,0 +1,20 @@
+<h3 class="attireTitleType3">Gallery from array of images</h3>
+
+<p class="attireTextType2">
+    Often it is required to show image or gallery of images directly from code.
+    <a class="showGalleryFromArray" role="button">Clicking here</a> will display images like so.
+</p>
+
+<script>
+    $('.showGalleryFromArray').on('click', function() {
+        $.SimpleLightbox.open({
+            items: ['demo/images/1big.jpg', 'demo/images/2big.jpg', 'demo/images/3big.jpg']
+        });
+    });
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $.SimpleLightbox.open({
+        items: ['demo/images/1big.jpg', 'demo/images/2big.jpg', 'demo/images/3big.jpg']
+    });
+</code></pre>

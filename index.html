@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>SimpleLightbox</title>
+<meta name="description" content="SimpleLightbox is lightweight and responsive lightbox library based on jQuery.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://rawgit.com/dbrekalo/attire/master/dist/css/build.min.css">
+<script src="https://rawgit.com/dbrekalo/attire/master/dist/js/build.min.js"></script>
+
+        <link rel="stylesheet" href="dist/simpleLightbox.min.css">
+        <script src="dist/simpleLightbox.min.js"></script>
+
+    </head>
+<body>
+
+    <section id="section-about" class="attireBlock">
+    <div class="inner">
+
+        <h1 data-nav-title="About" class="attireTitleType1">Simple lightbox</h1>
+
+        <p class="attireTextType1">
+            SimpleLightbox is lightweight and responsive lightbox library based on jQuery api.
+            Display images, galleries, videos or custom content and control your lightbox with easy to use api.
+            It weighs less than 2KB.
+        </p>
+
+        <nav class="attireAuthor">
+    <a class="imageElement" href="https://github.com/dbrekalo">
+        <img src="https://s.gravatar.com/avatar/32754a476fb3db1c5a1f9ad80c65d89d?s=80" alt="Damir Brekalo">
+    </a>
+    <a class="name" href="https://github.com/dbrekalo">Damir Brekalo</a>
+    <p class="socialBox">
+        <a href="mailto:dbrekalo@gmail.com" class="iconMail" title="Contact me by email">Contact me by email</a>
+        <a href="https://github.com/dbrekalo" class="iconGithub" title="Find me on Github">Find me on Github</a>
+        <a href="https://twitter.com/damirbr" class="iconTwitter" title="Reach me on Twitter">Reach me on Twitter</a>
+    </p>
+</nav>
+
+        <p class="attireTextType2">
+            In order to stay true to its name simpleLightbox tries to delegate most of heavy work to browser
+            native mechanisms and existing proven libraries.
+            Almost everything regarding layout (positioning and resizing) and animations is CSS.
+            Letting browser do it's own thing when possible seems like a good idea.
+            <br><br>
+            Library is internally using a available flavor of jQuery api implementation (jQuery, Zepto or simpleQuery)
+            mostly for purposes of event normalization and simple Dom manipulation.
+        </p>
+
+    </div>
+</section>
+
+    <section id="section-examples" class="attireBlock mod1">
+    <div class="inner">
+
+        <h2 class="attireTitleType2">Examples</h2>
+
+        <div class="imageGallery1">
+    <a href="demo/images/4big.jpg"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
+    <a href="demo/images/5big.jpg"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
+    <a href="demo/images/6big.jpg"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
+</div>
+
+<h3 class="attireTitleType3">Thumbs gallery</h3>
+
+<p class="attireTextType2">
+    Lets start with one of most common use cases - a gallery of thumbs where each thumb should be enlarged when clicked.
+    Once light-box is up you should be able to traverse images in collection either via arrows on screen or keyboard controls
+    (gamers might appreciate that "a" and "d" will work as arrow keys do).
+</p>
+
+<style>
+
+    .imageGallery1 {
+
+        overflow: hidden; margin: 30px -10px; padding: 5px;
+        background-color: #fff;
+
+    }
+    .imageGallery1 > a {
+
+        float: left; padding: 5px; width: 33.3333%; box-sizing: border-box;
+
+    }
+    .imageGallery1 > a > img {
+
+        display: block; width: 100%;
+
+    }
+
+</style>
+
+<script>
+    $('.imageGallery1 a').simpleLightbox();
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-markup">
+    <script type="prism-html-markup"><div class="imageGallery1">
+        <a href="demo/images/4big.jpg"><img src="demo/images/4small.jpg" alt="Gallery image 1" /></a>
+        <a href="demo/images/5big.jpg"><img src="demo/images/5small.jpg" alt="Gallery image 2" /></a>
+        <a href="demo/images/6big.jpg"><img src="demo/images/6small.jpg" alt="Gallery image 3" /></a>
+    </div>
+    </script>
+</code></pre>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $('.imageGallery1 a').simpleLightbox();
+</code></pre>
+
+
+        <hr class="attireSeparator mod1">
+
+        <h3 class="attireTitleType3">Gallery from array of images</h3>
+
+<p class="attireTextType2">
+    Often it is required to show image or gallery of images directly from code.
+    <a class="showGalleryFromArray" role="button">Clicking here</a> will display images like so.
+</p>
+
+<script>
+    $('.showGalleryFromArray').on('click', function() {
+        $.SimpleLightbox.open({
+            items: ['demo/images/1big.jpg', 'demo/images/2big.jpg', 'demo/images/3big.jpg']
+        });
+    });
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $.SimpleLightbox.open({
+        items: ['demo/images/1big.jpg', 'demo/images/2big.jpg', 'demo/images/3big.jpg']
+    });
+</code></pre>
+
+
+        <hr class="attireSeparator mod1">
+
+        <h3 class="attireTitleType3">Custom content</h3>
+
+<p class="attireTextType2">
+    There are times when you need to show some other type of content in lightbox beside images.
+    SimpleLightbox can be used to display forms, teasers or any custom html content.
+    <a class="customContentLink" role="button">Clicking here</a> will display the text above in lightbox form.
+</p>
+
+<style>
+
+    .contentInPopup {
+        padding: 2em; max-width: 40em;
+    }
+
+</style>
+
+<script>
+
+    $('.customContentLink').on('click', function() {
+        $.SimpleLightbox.open({
+            content: '<div class="contentInPopup">' +
+                        '<h3 class="attireTitleType3">Custom content</h3>' +
+                        '<p class="attireTextType2">' +
+                            'There are times when you need to show some other type of content in lightbox beside images.' +
+                            'SimpleLightbox can be used to display forms, teasers or any custom html content.' +
+                        '</p>' +
+                     '</div>',
+            elementClass: 'slbContentEl'
+        });
+    });
+
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $.SimpleLightbox.open({
+        content: '&lt;div class="contentInPopup"&gt;&lt;h3 class="attireTitleType3"&gtCustom content&lt;/h3&gt...',
+        elementClass: 'slbContentEl'
+    });
+</code></pre>
+
+
+        <hr class="attireSeparator mod1">
+
+        <h3 class="attireTitleType3">Displaying video</h3>
+
+<p class="attireTextType2">
+    Sometimes you need to <a class="lightBoxVideo" href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true">show a video</a> in light-box
+    (Video can be placed somewhere in gallery as well).
+</p>
+
+<script>
+    $('.lightBoxVideo').simpleLightbox();
+</script>
+
+<pre class="attireCodeHighlight"><code class="language-markup">
+    <script type="prism-html-markup"><p class="attireTextType2">
+        Sometimes you need to <a class="lightBoxVideo" href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true">show a video</a> in light-box
+        (Video can be placed somewhere in gallery as well).
+    </p>
+    </script>
+</code></pre>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    $('.lightBoxVideo').simpleLightbox();
+</code></pre>
+
+
+        <hr class="attireSeparator mod1">
+
+        <h3 class="attireTitleType3">Curious case of library lazy loading</h3>
+
+<p class="attireTextType2">
+    Lets say that you have a performance budget and you have a thumb gallery on your web app.
+    You want light-box library resources to be lazy loaded (JS and CSS) after user clicked on thumb.
+    If we assume that you have an implementation of resource loader your application code might end up looking like this:
+</p>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    var $items = $('.gallery a');
+
+    $items.on('click', function(e) {
+        resourceLoader.makeSureIsLoaded('$.SimpleLightbox', function() {
+            $.SimpleLightbox.open({
+                $items: $items,
+                startAt: $items.index($(e.target)),
+                bindToItems: false
+            });
+        });
+    });
+</code></pre>
+
+
+    </div>
+</section>
+
+    <section id="section-api-and-options" class="attireBlock">
+    <div class="inner">
+
+        <h2 class="attireTitleType2">Api and options</h2>
+
+        <p class="attireTextType2">
+            SimpleLightbox can be instantiated via plugin facade.
+            If there is a need to obtain lightbox object instance you can do so via jQuery data utility.
+            Alternatively you can can just use SimpleLightbox constructor.
+        </p>
+
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+
+            var $thumbs = $('.gallery a');
+
+            // Run, fire and forget
+            $thumbs.simpleLightbox();
+
+            // Run via plugin facade and get instance
+            var lightbox = $thumbs.simpleLightbox(options).data('simpleLightbox');
+
+            // run directly
+            var lightbox = new $.SimpleLightbox({
+                $items: $thumbs
+            });
+
+            // when images are in code
+            var lightbox = $.simpleLightbox.open({
+                items: ['img1-large.jpg', 'img2-large.jpg', 'img3-large.jpg']
+            });
+        </code></pre>
+
+        <p class="attireTextType2">
+            Once you have a reference to SimpleLightbox instance following methods are available:
+        </p>
+
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+            // Go to next image
+            lightbox.next();
+
+            // Go to previous image
+            lightbox.prev();
+
+            // Close lightbox
+            lightbox.close();
+
+            // Destroy lightbox (does close and removes all $items click handlers)
+            lightbox.destroy();
+
+            // Open lightbox
+            lightbox.show();
+
+            // Open lightbox at certain position
+            lightbox.showPosition(1);
+
+            // Set custom content
+            lightbox.setContent('<div>My content</div>');
+        </code></pre>
+
+        <p class="attireTextType2">
+            Plugin options / defaults are exposed in $.SimpleLightbox.defaults namespace so you can easily adjust them globally.
+            Full list of options is bellow.
+        </p>
+
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+            $.SimpleLightbox.defaults = {
+
+                // add custom classes to lightbox elements
+                elementClass: '',
+                elementLoadingClass: 'slbLoading',
+                htmlClass: 'slbActive',
+                closeBtnClass: '',
+                nextBtnClass: '',
+                prevBtnClass: '',
+                loadingTextClass: '',
+
+                // customize / localize controls captions
+                closeBtnCaption: 'Close',
+                nextBtnCaption: 'Next',
+                prevBtnCaption: 'Previous',
+                loadingCaption: 'Loading...',
+
+                bindToItems: true, // set click event handler to trigger lightbox on provided $items
+                closeOnOverlayClick: true,
+                closeOnEscapeKey: true,
+                nextOnImageClick: true,
+                showCaptions: true,
+
+                captionAttribute: 'title', // choose data source for library to glean image caption from
+                urlAttribute: 'href', // where to expect large image
+
+                startAt: 0, // start gallery at custom index
+                loadingTimeout: 100, // time after loading element will appear
+
+                appendTarget: 'body', // append elsewhere if needed
+
+                beforeSetContent: null, // convenient hooks for extending library behavoiur
+                beforeClose: null,
+                beforeDestroy: null,
+
+                videoRegex: new RegExp(/youtube.com|vimeo.com/) // regex which tests load url for iframe content
+
+            };
+        </code></pre>
+
+    </div>
+</section>
+
+    <section id="section-installation" class="attireBlock">
+    <div class="inner">
+
+        <h2 class="attireTitleType2">Installation</h2>
+
+        <p class="attireTextType2">
+            Browse dist folder for library JS and CSS files.
+            SimpleLightbox JS file (normal or minified one) should be included after jQuery flavor of your choice if you go with plain script tags.
+        </p>
+
+        <p class="attireTextType2">
+            Download library files from <a href="https://github.com/dbrekalo/simpleLightbox">github repo</a> or get them via bower (bower install simple-lightbox)
+        </p>
+
+    </div>
+</section>
+
+
+    <a class="githubRibbon" href="https://github.com/dbrekalo/simpleLightbox">
+    <img src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+</a>
+    <footer class="attireFooter">
+    <p>This page is built with <a href="http://dbrekalo.github.io/attire/">Attire</a>.</p>
+</footer>
+
+</body>
+
+</html>

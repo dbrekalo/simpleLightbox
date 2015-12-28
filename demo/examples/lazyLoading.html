@@ -1,0 +1,21 @@
+<h3 class="attireTitleType3">Curious case of library lazy loading</h3>
+
+<p class="attireTextType2">
+    Lets say that you have a performance budget and you have a thumb gallery on your web app.
+    You want light-box library resources to be lazy loaded (JS and CSS) after user clicked on thumb.
+    If we assume that you have an implementation of resource loader your application code might end up looking like this:
+</p>
+
+<pre class="attireCodeHighlight"><code class="language-javascript">
+    var $items = $('.gallery a');
+
+    $items.on('click', function(e) {
+        resourceLoader.makeSureIsLoaded('$.SimpleLightbox', function() {
+            $.SimpleLightbox.open({
+                $items: $items,
+                startAt: $items.index($(e.target)),
+                bindToItems: false
+            });
+        });
+    });
+</code></pre>

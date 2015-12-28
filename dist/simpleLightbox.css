@@ -241,7 +241,7 @@
 
 @-webkit-keyframes slbEnter {
   from {
-    opacity: 0.5;
+    opacity: 0.8;
     -webkit-transform: translate3d(0, -1em, 0);
   }
   to {
@@ -252,7 +252,7 @@
 
 @-moz-keyframes slbEnter {
   from {
-    opacity: 0.5;
+    opacity: 0.8;
     -moz-transform: translate3d(0, -1em, 0);
   }
   to {
@@ -263,7 +263,7 @@
 
 @keyframes slbEnter {
   from {
-    opacity: 0.5;
+    opacity: 0.8;
     -webkit-transform: translate3d(0, -1em, 0);
     -moz-transform: translate3d(0, -1em, 0);
     -ms-transform: translate3d(0, -1em, 0);
