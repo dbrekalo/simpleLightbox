@@ -78,7 +78,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     globals: {
-                        repositoryUrl: '<%= pkg.repository.url %>',
+                        repositoryUrl: '<%= pkg.repository.url %>'
                     },
                     prefix: '{{ ',
                     suffix: ' }}'
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
         watch: {
             jsFiles: {
                 expand: true,
-                files: ['src/**/*.js'],
+                files: ['src/**/*.js', 'Gruntfile.js'],
                 tasks: ['jshint', 'jscs', 'copy','uglify'],
                 options: {
                     spawn: false
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
                     spawn: false
                 }
             }
-        },
+        }
 
     });
 
