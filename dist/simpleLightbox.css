@@ -165,6 +165,10 @@
   right: 0;
 }
 
+.slbLoading .slbArrows {
+  display: none;
+}
+
 .slbArrow {
   position: absolute;
   top: 50%;
@@ -248,7 +252,7 @@
 
 @-webkit-keyframes slbEnter {
   from {
-    opacity: 0.8;
+    opacity: 0;
     -webkit-transform: translate3d(0, -1em, 0);
   }
   to {
@@ -259,7 +263,7 @@
 
 @-moz-keyframes slbEnter {
   from {
-    opacity: 0.8;
+    opacity: 0;
     -moz-transform: translate3d(0, -1em, 0);
   }
   to {
@@ -270,7 +274,7 @@
 
 @keyframes slbEnter {
   from {
-    opacity: 0.8;
+    opacity: 0;
     -webkit-transform: translate3d(0, -1em, 0);
     -moz-transform: translate3d(0, -1em, 0);
     -ms-transform: translate3d(0, -1em, 0);

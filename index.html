@@ -77,15 +77,18 @@
 
     .imageGallery1 {
 
-        overflow: hidden; margin: 30px -10px; padding: 8px;
-        background-color: #fff;
+        overflow: hidden; margin: 30px -20px;
 
     }
     .imageGallery1 > a {
 
-        float: left; padding: 2px; width: 33.3333%; box-sizing: border-box;
+        float: left; width: 33.3333%; padding: 1px; box-sizing: border-box; position: relative;
 
     }
+
+    .imageGallery1 > a:first-child { left: -1px; }
+    .imageGallery1 > a:last-child { right: -1px; }
+
     .imageGallery1 > a > img {
 
         display: block; width: 100%;
