@@ -1,4 +1,14 @@
-;(function($) {
+(function(factory) {
+
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory(require('jquery'));
+    } else {
+        factory(jQuery);
+    }
+
+}(function($) {
 
     var instanceNum = 0,
         $html = $('html'),
@@ -379,4 +389,6 @@
 
     $.simpleLightbox = $.SimpleLightbox = SimpleLightbox;
 
-})(window.jQuery || window.Zepto || window.simpleQuery);
+    return $;
+
+}));

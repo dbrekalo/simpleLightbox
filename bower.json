@@ -1,6 +1,6 @@
 {
   "name": "simple-lightbox",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "homepage": "https://github.com/dbrekalo/simpleLightbox",
   "authors": [
     "Damir Brekalo <dbrekalo@gmail.com>"
@@ -24,7 +24,6 @@
     "bourbon": "~4.2.3"
   },
   "dependencies": {
-    "jquery": ">=1.7.0",
-    "simplequery": ">=1"
+    "jquery": ">=1.7"
   }
 }

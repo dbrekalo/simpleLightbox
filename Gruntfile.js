@@ -3,7 +3,8 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 
-        pkg: grunt.file.readJSON('package.json'),
+        npmPackage: grunt.file.readJSON('package.json'),
+        bowerPackage: grunt.file.readJSON('bower.json'),
 
         uglify: {
             min: {
@@ -78,7 +79,9 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     globals: {
-                        repositoryUrl: '<%= pkg.repository.url %>'
+                        repositoryUrl: '<%= npmPackage.repository.url %>',
+                        npmRepositoryName: '<%= npmPackage.name %>',
+                        bowerRepositoryName: '<%= bowerPackage.name %>'
                     },
                     prefix: '{{ ',
                     suffix: ' }}'

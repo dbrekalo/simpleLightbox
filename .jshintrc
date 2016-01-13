@@ -68,7 +68,7 @@
 	"dojo"			: false,	// Dojo Toolkit
 	"jquery"		: true,		// jQuery
 	"mootools"		: false,	// MooTools
-	"node"			: false,	// Node.js
+	"node"			: true,	    // Node.js
 	"nonstandard"	: false,	// Widely adopted globals (escape, unescape, etc)
 	"prototypejs"	: false,	// Prototype and Scriptaculous
 	"rhino"			: false,	// Rhino
@@ -83,5 +83,7 @@
 	"white"			: true,		// true: Check against strict whitespace and indentation rules
 
 	// Custom Globals
-	"globals"		: {}		// additional predefined global variables
+	"globals"		: {
+        "define"    : true
+    }
 }
