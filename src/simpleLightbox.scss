@@ -1,4 +1,4 @@
-@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../node_modules/bourbon/app/assets/stylesheets/bourbon';
 
 .slbOverlay, .slbWrapOuter, .slbWrap {
 
@@ -64,7 +64,7 @@
     &:after {
 
         content: ""; position: absolute; left: 0; right: 0; top: 5em; bottom: 5em; display: block; z-index: -1;
-        box-shadow: 0 0.2em 1em rgba(#000, 0.6);
+        box-shadow: 0 0.2em 1em rgba(#000, 0.6); background-color: #FFF;
 
     }
 
@@ -179,4 +179,3 @@
     from { opacity: 0; @include transform(translate3d(0, -1em, 0)); }
     to { opacity: 1; @include transform(translate3d(0, 0, 0)); }
 }
-
