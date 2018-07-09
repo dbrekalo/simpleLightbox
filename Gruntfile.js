@@ -85,7 +85,7 @@ module.exports = function(grunt) {
                 tagName: '%VERSION%',
                 push: false
             }
-        }
+        },
 
         watch: {
             jsFiles: {
