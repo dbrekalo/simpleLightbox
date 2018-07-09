@@ -4,14 +4,30 @@
         <h2 class="attireTitleType2">Installation</h2>
 
         <p class="attireTextType2">
-            Browse dist folder for library JS and CSS files.
-            SimpleLightbox JS file (normal or minified one) should be included after jQuery if you go with plain script tags.
+            SimpleLightbox is packaged as UMD library so you can use it in CommonJS and AMD environment or with browser globals.
         </p>
 
+        <pre class="attireCodeHighlight"><code class="language-javascript">
+            // install via npm
+            npm install {{ npmRepositoryName }} --save
+
+            // if you use bundler
+            var SimpleLightbox = require('{{ npmRepositoryName }}');
+
+            // or just using browser globals
+            var SimpleLightbox = window.SimpleLightbox;
+
+            // if using bundler with jQuery
+            var $ = require('jquery');
+            var SimpleLightbox = require('{{ npmRepositoryName }}');
+            SimpleLightbox.registerAsJqueryPlugin($);
+
+        </code></pre>
+
         <p class="attireTextType2">
+            For browser usage browse dist folder - if working with build tools go with src folder.
             Download library files from <a href="{{ repositoryUrl }}">github repo</a>,
-            get them via bower (bower install {{ bowerRepositoryName }})
-            or via npm (npm install {{ npmRepositoryName }})
+            get them via npm (npm install {{ npmRepositoryName }})
         </p>
 
     </div>

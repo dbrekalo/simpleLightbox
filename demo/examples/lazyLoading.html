@@ -11,7 +11,7 @@
 
     $items.on('click', function(e) {
         resourceLoader.makeSureIsLoaded('$.SimpleLightbox', function() {
-            $.SimpleLightbox.open({
+            SimpleLightbox.open({
                 $items: $items,
                 startAt: $items.index($(e.target)),
                 bindToItems: false

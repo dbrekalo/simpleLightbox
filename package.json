@@ -8,23 +8,27 @@
     "email": "dbrekalo@gmail.com",
     "name": "Damir Brekalo"
   },
+  "scripts": {
+    "watch": "grunt watch",
+    "build": "grunt build",
+    "bump:patch": "grunt bump:patch",
+    "bump:minor": "grunt bump:minor",
+    "bump:major": "grunt bump:major"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dbrekalo/simpleLightbox"
   },
   "devDependencies": {
     "bourbon": "^4.2.7",
-    "grunt": "^0.4.5",
-    "grunt-contrib-copy": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-include-replace": "^3.2.0",
-    "grunt-jscs": "^1.5.0",
-    "grunt-sass": "^1",
-    "load-grunt-tasks": "^0.6.0"
-  },
-  "dependencies": {
-    "jquery": ">=1.7"
+    "grunt": "^1.0.2",
+    "grunt-bump": "^0.8.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.1",
+    "grunt-eslint": "^20.1.0",
+    "grunt-include-replace": "^5.0.0",
+    "grunt-sass": "^2.1.0",
+    "load-grunt-tasks": "^3.5.2"
   }
 }

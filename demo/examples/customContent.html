@@ -17,7 +17,7 @@
 <script>
 
     $('.customContentLink').on('click', function() {
-        $.SimpleLightbox.open({
+        SimpleLightbox.open({
             content: '<div class="contentInPopup">' +
                         '<h3 class="attireTitleType3">Custom content</h3>' +
                         '<p class="attireTextType2">' +
@@ -32,7 +32,7 @@
 </script>
 
 <pre class="attireCodeHighlight"><code class="language-javascript">
-    $.SimpleLightbox.open({
+    SimpleLightbox.open({
         content: '&lt;div class="contentInPopup"&gt;&lt;h3 class="attireTitleType3"&gtCustom content&lt;/h3&gt...',
         elementClass: 'slbContentEl'
     });

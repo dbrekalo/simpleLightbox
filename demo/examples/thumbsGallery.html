@@ -37,7 +37,11 @@
 </style>
 
 <script>
-    $('.imageGallery1 a').simpleLightbox();
+
+    new SimpleLightbox({elements: '.imageGallery1 a'});
+
+    // or if using jQuery
+    // $('.imageGallery1 a').simpleLightbox();
 </script>
 
 <pre class="attireCodeHighlight"><code class="language-markup">
@@ -50,5 +54,9 @@
 </code></pre>
 
 <pre class="attireCodeHighlight"><code class="language-javascript">
+    // using plain js
+    new SimpleLightbox({elements: '.imageGallery1 a'});
+
+    // or if using jQuery
     $('.imageGallery1 a').simpleLightbox();
 </code></pre>

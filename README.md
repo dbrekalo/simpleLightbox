@@ -1,4 +1,4 @@
-#SimpleLightbox
-Lightweight plugin for responsive lightbox images and galleries based on jquery api
+# SimpleLightbox
+Lightweight plugin for responsive lightbox images and galleries with no dependencies.
 
 [Demo and documentation can be found here](http://dbrekalo.github.io/simpleLightbox/)

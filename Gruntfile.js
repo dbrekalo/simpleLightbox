@@ -6,6 +6,13 @@ module.exports = function(grunt) {
         npmPackage: grunt.file.readJSON('package.json'),
         bowerPackage: grunt.file.readJSON('bower.json'),
 
+        eslint: {
+            options: {
+                configFile: '.eslintrc.js'
+            },
+            target: ['src/**/*.js', 'Gruntfile.js']
+        },
+
         uglify: {
             min: {
                 files: [{
@@ -29,26 +36,6 @@ module.exports = function(grunt) {
                     src: ['**/*.js'],
                     dest: 'dist'
                 }]
-            }
-        },
-
-        jshint: {
-            options: {
-                'jshintrc': '.jshintrc'
-            },
-            all: ['src','Gruntfile.js']
-        },
-
-        jscs: {
-            options: {
-                config: '.jscsrc'
-            },
-            scripts: {
-                files: {
-                    src: [
-                        'src/**/*.js'
-                    ]
-                }
             }
         },
 
@@ -91,11 +78,20 @@ module.exports = function(grunt) {
             }
         },
 
+        bump: {
+            options: {
+                files: ['package.json', 'package-lock.json'],
+                commitFiles: ['package.json', 'package-lock.json'],
+                tagName: '%VERSION%',
+                push: false
+            }
+        }
+
         watch: {
             jsFiles: {
                 expand: true,
                 files: ['src/**/*.js', 'Gruntfile.js'],
-                tasks: ['jshint', 'jscs', 'copy','uglify'],
+                tasks: ['eslint', 'copy', 'uglify'],
                 options: {
                     spawn: false
                 }
@@ -123,6 +119,6 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['jshint', 'jscs', 'uglify', 'copy', 'sass', 'includereplace']);
+    grunt.registerTask('build', ['eslint', 'uglify', 'copy', 'sass', 'includereplace']);
 
 };
