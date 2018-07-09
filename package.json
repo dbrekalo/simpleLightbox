@@ -21,11 +21,11 @@
   },
   "devDependencies": {
     "bourbon": "^4.2.7",
-    "grunt": "^1.0.2",
+    "grunt": "^1.0.3",
     "grunt-bump": "^0.8.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.0.1",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-eslint": "^20.1.0",
     "grunt-include-replace": "^5.0.0",
     "grunt-sass": "^2.1.0",
