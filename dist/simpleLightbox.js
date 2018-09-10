@@ -108,7 +108,9 @@
 
         beforeSetContent: null, // convenient hooks for extending library behavoiur
         beforeClose: null,
+        afterClose: null,
         beforeDestroy: null,
+        afterDestroy: null,
 
         videoRegex: new RegExp(/youtube.com|vimeo.com/) // regex which tests load url for iframe content
 
@@ -458,28 +460,34 @@
 
         close: function() {
 
-            this.direction = undefined;
-            this.currentPosition = this.options.startAt;
-
             if (this.modalInDom) {
 
-                this.options.beforeClose && this.options.beforeClose(this);
-
+                this.runHook('beforeClose');
                 this.removeEvents('lightbox');
-
                 this.$el && this.$el.parentNode.removeChild(this.$el);
                 removeClass(document.documentElement, this.options.htmlClass);
                 this.modalInDom = false;
+                this.runHook('afterClose');
 
             }
+
+            this.direction = undefined;
+            this.currentPosition = this.options.startAt;
 
         },
 
         destroy: function() {
 
             this.close();
-            this.options.beforeDestroy && this.options.beforeDestroy(this);
+            this.runHook('beforeDestroy');
             this.removeEvents('thumbnails');
+            this.runHook('afterDestroy');
+
+        },
+
+        runHook: function(name) {
+
+            this.options[name] && this.options[name](this);
 
         }
 
