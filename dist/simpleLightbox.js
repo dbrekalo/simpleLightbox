@@ -467,7 +467,7 @@
 
                 this.removeEvents('lightbox');
 
-                this.$el && this.$el.remove();
+                this.$el && this.$el.parentNode.removeChild(this.$el);
                 removeClass(document.documentElement, this.options.htmlClass);
                 this.modalInDom = false;
 
