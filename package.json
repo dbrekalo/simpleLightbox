@@ -1,6 +1,6 @@
 {
   "name": "simple-lightbox",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Lightweight plugin for lightbox images and galleries based on jquery api",
   "main": "src/simpleLightbox.js",
   "license": "MIT",
