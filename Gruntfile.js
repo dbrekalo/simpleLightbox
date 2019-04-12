@@ -47,7 +47,8 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'compressed',
                     sourceMap: false,
-                    precision: 5
+                    precision: 5,
+                    includePaths: require('bourbon').includePaths
                 }
             },
             expanded: {
@@ -57,7 +58,8 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     sourceMap: false,
-                    precision: 5
+                    precision: 5,
+                    includePaths: require('bourbon').includePaths
                 }
             }
         },

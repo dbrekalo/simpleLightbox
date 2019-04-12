@@ -1,4 +1,5 @@
-@import '../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import 'bourbon';
+
 $output-bourbon-deprecation-warnings: false;
 
 .slbOverlay, .slbWrapOuter, .slbWrap {
