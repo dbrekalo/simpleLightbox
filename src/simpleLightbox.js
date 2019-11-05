@@ -95,6 +95,7 @@
         bindToItems: true, // set click event handler to trigger lightbox on provided $items
         closeOnOverlayClick: true,
         closeOnEscapeKey: true,
+        closeOnImageClick: false,
         nextOnImageClick: true,
         showCaptions: true,
 
@@ -434,8 +435,11 @@
                     matches($target, '.next') ? self.next() : self.prev();
 
                 } else if (self.options.nextOnImageClick && self.items.length > 1 && matches($target, '.slbImage')) {
-
-                    self.next();
+                    if (self.options.nextOnImageClick) {
+                        self.next();
+                    } else if (self.options.closeOnImageClick) {
+                        self.close();
+                    }
 
                 }
 
