@@ -434,7 +434,7 @@
 
                     matches($target, '.next') ? self.next() : self.prev();
 
-                } else if (self.options.nextOnImageClick && self.items.length > 1 && matches($target, '.slbImage')) {
+                } else if (self.items.length > 1 && matches($target, '.slbImage')) {
                     if (self.options.nextOnImageClick) {
                         self.next();
                     } else if (self.options.closeOnImageClick) {
